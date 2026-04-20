@@ -1,24 +1,28 @@
-# CANalytics Portfolio
+# Brandon Cantrell Portfolio
 
-This repository contains the source code for my personal [Analytics Engineering Portfolio](https://brandoncanalytics.github.io/CANalytics/).
+This repository contains the source code for my personal BI leadership and analytics engineering portfolio.
 
 ## Overview
 
-Designed from the ground up to reflect a "high-trust, minimal, and senior" aesthetic, this site positions my core competencies in systems architecture, dimensional modeling, and lightweight practical applications (like Streamlit interfaces).
+The site positions my work around a clear operating idea: designing scalable analytics systems that turn data into trusted, decision-ready insights while driving stakeholder adoption.
 
 ## Tech Stack
-- Pure **HTML5** & **CSS3**
+- Pure **HTML5** and **CSS3**
 - Zero JavaScript framework overhead
-- Flexbox & Grid based responsive design
-- Inline stroked SVGs for crisp iconography
+- Responsive Flexbox and Grid layout
+- Inline SVG icons and CSS-only visuals
 
 ## Key Sections
-- **Selected Data Systems**: Deep-dives into core data engineering pipelines and warehouse architectures (ELT, dbt, BigQuery).
-- **Applied Engineering**: Proof of work showing how I build interfaces and internal tools directly on top of trusted data models.
-- **Systems Thinking**: A breakdown of the core principles I bring to data modeling (Explicit Grain, Canonical Metrics, Warehouse-First Logic).
+- **Hero**: BI Lead / Staff Analytics Engineer positioning and Data -> Model -> Dashboard -> Decision flow.
+- **How I Work**: Stakeholder-to-system workflow from ambiguous question to decision-ready output.
+- **Analytics as a Product**: BI adoption framing with dashboards as products and stakeholders as users.
+- **Dashboard Design**: CSS mock dashboard showing KPIs, trends, and narrative insight.
+- **Data Modeling**: Grain, canonical metrics, layered modeling, and Raw -> Staging -> Intermediate -> Mart -> BI architecture.
+- **Projects**: Concise examples focused on problem, system built, and impact.
+- **Systems Thinking**: Practical BI leadership principles.
 
 ## Local Development
-To view the site locally, simply open `index.html` in your browser. No build steps or package managers are required.
+Open `index.html` in a browser. No build steps, package managers, or framework runtime are required.
 
 ## Connect
 - **LinkedIn**: [linkedin.com/in/canalytics](https://linkedin.com/in/canalytics)
