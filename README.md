@@ -1,30 +1,26 @@
 # Brandon Cantrell Portfolio
 
-This repository contains the source code for my personal BI leadership and analytics engineering portfolio.
+A static portfolio presenting Brandon's work as an analytics engineer and BI systems builder. The site focuses on end-to-end systems ownership: business discovery, data architecture, modeling, product design, rollout, and communication.
 
-## Overview
+## Stack
 
-The site positions my work around a clear operating idea: designing scalable analytics systems that turn data into trusted, decision-ready insights while driving stakeholder adoption.
+- Semantic HTML5
+- Custom CSS
+- Minimal, progressively enhanced browser behavior
+- Google Tag Manager
 
-## Tech Stack
-- Pure **HTML5** and **CSS3**
-- Zero JavaScript framework overhead
-- Responsive Flexbox and Grid layout
-- Inline SVG icons and CSS-only visuals
+There are no runtime dependencies, package manager, framework, or build step.
 
-## Key Sections
-- **Hero**: BI Lead / Staff Analytics Engineer positioning and Data -> Model -> Dashboard -> Decision flow.
-- **How I Work**: Stakeholder-to-system workflow from ambiguous question to decision-ready output.
-- **Analytics as a Product**: BI adoption framing with dashboards as products and stakeholders as users.
-- **Dashboard Design**: CSS mock dashboard showing KPIs, trends, and narrative insight.
-- **Data Modeling**: Grain, canonical metrics, layered modeling, and Raw -> Staging -> Intermediate -> Mart -> BI architecture.
-- **Projects**: Concise examples focused on problem, system built, and impact.
-- **Systems Thinking**: Practical BI leadership principles.
+## Local development
 
-## Local Development
-Open `index.html` in a browser. No build steps, package managers, or framework runtime are required.
+Open `index.html` directly in a browser, or serve this directory with a local static-file server of your choice.
 
-## Connect
-- **LinkedIn**: [linkedin.com/in/canalytics](https://linkedin.com/in/canalytics)
-- **GitHub**: [github.com/brandoncanalytics](https://github.com/brandoncanalytics)
-- **Email**: brandoncantrell2000@gmail.com
+## Content
+
+`copy.md` is the approved source of truth for V2 homepage copy. Do not introduce unsupported professional claims or expose confidential client data. See `AGENTS.md` for repository conventions and safe working practices.
+
+## Contact
+
+- [LinkedIn](https://linkedin.com/in/canalytics)
+- [GitHub](https://github.com/brandoncanalytics)
+- [Email](mailto:brandoncantrell2000@gmail.com)
