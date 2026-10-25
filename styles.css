@@ -245,16 +245,17 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
   .top nav { margin-left: 0; }
 }
 
-/* Mobile header controls stay clear of the page content. */
-.menu-toggle, .mobile-top-slot, .top .mobile-sections { display: none; }
+/* Compact mobile navigation. */
+.menu-toggle, .top .mobile-sections { display: none; }
 @media (max-width: 900px) {
-  .top-in { position: relative; gap: 8px; }
-  .top-in > .brand { flex: 1 0 calc(100% - 52px); }
-  .top-in > nav:not(.mobile-sections) { order: 3; margin-left: 0; }
-  .menu-toggle:not([hidden]) { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  .top-in { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto 36px; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+  .top-in > .brand { font-size: .82rem; line-height: 1.25; }
+  .top-in > nav:not(.mobile-sections) { margin-left: 0; gap: 4px; flex-wrap: nowrap; }
+  .top-in > nav:not(.mobile-sections) a { font-size: .68rem; padding: 6px; white-space: nowrap; }
+  .menu-toggle:not([hidden]) { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 40px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--ink); cursor: pointer; }
   .menu-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-  .mobile-top-slot { display: flex; order: 4; margin-left: auto; }
-  .back-to-top { position: static; display: inline-block; }
+  .back-to-top { bottom: max(18px, env(safe-area-inset-bottom)); }
+  .back-to-top[hidden] { display: none; }
   .top .mobile-sections:not([hidden]) { display: grid; position: absolute; top: 100%; left: 22px; right: 22px; margin: 0; padding: 8px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
   .top nav.mobile-sections a { display: block; padding: 12px; overflow-wrap: anywhere; }
 }

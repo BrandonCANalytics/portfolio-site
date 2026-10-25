@@ -160,14 +160,15 @@
   document.fonts.ready.then(drawConnections);
 })();
 
-// Mobile navigation and a reserved header position for the existing Top link.
+// Mobile navigation and a floating Top link after the hero.
 (function () {
   var toggle = document.querySelector('.menu-toggle');
   var menu = document.getElementById('mobile-sections');
   var topLink = document.querySelector('.back-to-top');
-  var slot = document.querySelector('.mobile-top-slot');
-  var home = document.createComment('Desktop Top link position');
-  topLink.before(home);
+  var hero = document.querySelector('.hero');
+  function updateTopLink() {
+    topLink.hidden = mobile.matches && hero.getBoundingClientRect().bottom > 0;
+  }
   var mobile = window.matchMedia('(max-width: 900px)');
   function closeMenu(restoreFocus) {
     menu.hidden = true;
@@ -191,9 +192,9 @@
   function updateLayout() {
     closeMenu(false);
     toggle.hidden = !mobile.matches;
-    if (mobile.matches) slot.appendChild(topLink);
-    else home.after(topLink);
+    updateTopLink();
   }
+  window.addEventListener('scroll', updateTopLink, { passive: true });
   mobile.addEventListener('change', updateLayout);
   updateLayout();
 })();
