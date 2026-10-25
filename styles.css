@@ -244,3 +244,17 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
   .top-in { gap: 8px; }
   .top nav { margin-left: 0; }
 }
+
+/* Mobile header controls stay clear of the page content. */
+.menu-toggle, .mobile-top-slot, .top .mobile-sections { display: none; }
+@media (max-width: 900px) {
+  .top-in { position: relative; gap: 8px; }
+  .top-in > .brand { flex: 1 0 calc(100% - 52px); }
+  .top-in > nav:not(.mobile-sections) { order: 3; margin-left: 0; }
+  .menu-toggle:not([hidden]) { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--ink); cursor: pointer; }
+  .menu-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+  .mobile-top-slot { display: flex; order: 4; margin-left: auto; }
+  .back-to-top { position: static; display: inline-block; }
+  .top .mobile-sections:not([hidden]) { display: grid; position: absolute; top: 100%; left: 22px; right: 22px; margin: 0; padding: 8px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
+  .top nav.mobile-sections a { display: block; padding: 12px; overflow-wrap: anywhere; }
+}
