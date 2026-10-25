@@ -74,7 +74,7 @@
       body: "Tools are the part of this page I care about least. Greenfield work still demands range: ingestion, modeling, warehousing, BI, and the occasional product build. The stack is evidence for the model above, <strong>never the headline</strong>.",
       list: [
         "<strong>Modeling:</strong> dbt, SQL, layered modeling, canonical metrics.",
-        "<strong>Warehouses + BI:</strong> BigQuery, Looker, Metabase, SSRS, Excel.",
+        "<strong>Warehouses + BI:</strong> BigQuery, Looker, Metabase, SSRS, Excel, Snowflake, Power BI.",
         "<strong>Engineering:</strong> Python, REST APIs, Cloud Run, Streamlit, Fivetran, Supabase."
       ],
       jump: "#tooling", jumpLabel: "Open dim_tooling ↓"
@@ -158,4 +158,42 @@
   }
   new ResizeObserver(drawConnections).observe(grid);
   document.fonts.ready.then(drawConnections);
+})();
+
+// Mobile navigation and a reserved header position for the existing Top link.
+(function () {
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('mobile-sections');
+  var topLink = document.querySelector('.back-to-top');
+  var slot = document.querySelector('.mobile-top-slot');
+  var home = document.createComment('Desktop Top link position');
+  topLink.before(home);
+  var mobile = window.matchMedia('(max-width: 900px)');
+  function closeMenu(restoreFocus) {
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) toggle.focus();
+  }
+  toggle.addEventListener('click', function () {
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    menu.hidden = expanded;
+    toggle.setAttribute('aria-expanded', String(!expanded));
+  });
+  menu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) closeMenu(true);
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !menu.hidden) closeMenu(true);
+  });
+  document.addEventListener('pointerdown', function (event) {
+    if (!menu.hidden && !menu.contains(event.target) && !toggle.contains(event.target)) closeMenu(false);
+  });
+  function updateLayout() {
+    closeMenu(false);
+    toggle.hidden = !mobile.matches;
+    if (mobile.matches) slot.appendChild(topLink);
+    else home.after(topLink);
+  }
+  mobile.addEventListener('change', updateLayout);
+  updateLayout();
 })();
